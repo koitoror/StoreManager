@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/signup.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/login.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/signup.css" />
+
+
+
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+    <div class="header">
+        <a href="#default" class="logo">StoreManager</a>
+        <div class="header-right">
+            <a href="admin.html">Home</a>
+            <a class="active" href="attendants.html">Add Attendant</a>
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Admin Sign Up</button>
+            <a href="products.html">Add Product</a>
+            <a href="index.html">Log Out</a>
+
+
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2>Welcome, Admin(Store Owner)</h2>
+        <p>to every store manager's favorite web app</p>
+
+    </div>
+
+    <section id="dashboard">
+        <div class="container">
+            <h2>Dashboard, <small>Daniel K</small></h2>
+
+            <hr>
+            <div class="container" id="avatar">
+                <img src="static/images/admin-avatar.jpg" alt="Image">
+            </div>
+            <div>
+                <p><b>Admin #: </b>(1)</p>
+                <!-- button that triggers the modal -->
+                <p><b>
+
+                    <a class="button bg-dark" id="btn" href="#">User Settings</a>
+                    </b></p>
+
+                <!-- the modal menu -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <legend>Notifications</legend>
+                        <form class="myForm">
+                            <div class="form-group">
+                                <label for="date">Set Reminder</label>
+                                <input id="date" type="datetime-local" class="form-control">
+                            </div>
+                            <input class="button bg-dark" type="submit" value="set">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div>
+                <a class="button bg-dark float-right">
+                <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Attendant Sign Up</button>
+                </a>
+            </div>
+            <legend>Store Attendants</legend>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Admin Role</th>
+                        <th>Attendant Name</th>
+                        <th>Date Added</th>
+                        <th>Attendant Details</th>
+                        <th>Edit Details</th>
+                        <th>Delete Attendant</th>
+                        <th>Attendant Sales</th>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked /></td>
+                        <td>John Donald</td>
+                        <td>10-10-2018</td>
+                        <td><a href="sales.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit" style="font-size:30px;color:green"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-close" style="font-size:30px;color:red"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit"></i> Ksh. 6,870</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Hussein Barrack</td>
+                        <td>10-10-2018</td>
+                        <td><a href="sales.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit" style="font-size:30px;color:green"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-close" style="font-size:30px;color:red"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit"></i> Ksh. 6,870</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Rodham Hillary</td>
+                        <td>10-10-2018</td>
+                        <td><a href="sales.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit" style="font-size:30px;color:green"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-close" style="font-size:30px;color:red"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit"></i> Ksh. 6,870</a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>H.W. George</td>
+                        <td>10-10-2018</td>
+                        <td><a href="sales.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit" style="font-size:30px;color:green"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-close" style="font-size:30px;color:red"></i></a></td>
+                        <td><a href="sales.html"><i class="fa fa-edit"></i> Ksh. 6,870</a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th>Ksh. 27,480</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <div id="id02" class="modal" style="display: none;">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+        <form class="modal-content" action="index.html#id01">
+            <div class="container">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required="">
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required="">
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required="">
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember
+                    me
+                </label>
+
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms &amp; Privacy</a>.</p>
+
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer class="text-center bg-dark">
+        <p>
+            StoreManager, Copyright &copy; 2018
+        </p>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+
+</body>
+
+</html>
