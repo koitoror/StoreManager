@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/signup.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/login.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/dashboard.css" />
+
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="#default" class="logo">StoreManager</a>
+        <div class="header-right">
+            <a href="attendant-a-admin.html">Home</a>
+            <a href="categories-a-admin.html">Add Product Category</a>
+            <a class="active" href="products-a-admin.html">View Product-Details</a>
+            <a href="sale-a-admin.html">Make A Sale</a>
+            <a href="sales-a-admin.html">Sales Records</a>            
+            <a href="index.html">Log Out</a>
+
+
+        </div>
+    </div>
+
+    <div>
+
+        <h2>Welcome, Admin(Store Attendant)</h2>
+        <p>to every store manager's favorite web app</p>
+
+    </div>
+
+    <section id="dashboard">
+        <div class="container">
+            <h2>Dashboard, <small>John Donald</small></h2>
+
+            <hr>
+            <div class="container" id="avatar">
+                <img src="static/images/img_avatar2.png" alt="Image">
+            </div>
+            <div>
+                <p><b>Product #: </b>(4)</p>
+                <!-- button that triggers the modal -->
+                <p><b><a class="button bg-dark" id="btn" href="attendants.html">User Settings</a></b></p>
+
+                <!-- the modal menu -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <legend>Notifications</legend>
+                        <form class="myForm">
+                            <div class="form-group">
+                                <label for="date">Set Reminder</label>
+                                <input id="date" type="datetime-local" class="form-control">
+                            </div>
+                            <input class="button bg-dark" type="submit" value="set">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div>
+                <a href="products.html" class="button bg-dark float-right">Add Product</a>
+            </div>
+            <legend>Product Entries</legend>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Product Category</th>
+                        <th>Date Added</th>
+                        <th>Product Details</th>
+                        <th>Min. Quantity</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Developer Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td><a href="products-view.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>1</td>
+                        <td>100</td>
+                        <td>Ksh. 260</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Staging Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td><a href="products-view.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>Ksh. 360</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Testing Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td><a href="products-view.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>Ksh. 410</td>                    
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Production Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td><a href="products-view.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>1</td>
+                        <td>20</td>
+                        <td>Ksh. 620</td>                    
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center bg-dark">
+        <p>
+            StoreManager, Copyright &copy; 2018
+        </p>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+
+</body>
+
+</html>
