@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/signup.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/login.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/dashboard.css" />
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="#default" class="logo">StoreManager</a>
+        <div class="header-right">
+            <a href="attendant-a-admin.html">Home</a>
+            <a href="categories-a-admin.html">Add Product Category</a>
+            <a href="products-a-admin.html">View Product-Details</a>
+            <a class="active" href="sale-a-admin.html">Make A Sale</a>
+            <a href="sales-a-admin.html">Sales Records</a>            
+            <a href="index.html">Log Out</a>
+
+
+        </div>
+    </div>
+
+    <div>
+
+        <h2>Welcome, Admin(Store Attendant)</h2>
+        <p>to every store manager's favorite web app</p>
+
+    </div>
+
+    <section id="dashboard">
+        <div class="container">
+            <h2>Dashboard, <small>John Donald</small></h2>
+
+            <hr>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div>
+                <a href="sale-a-admin.html" class="button bg-dark float-right">Make A Sale</a>
+            </div>
+            <legend>A Sale</legend>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Product Category</th>
+                        <th>Date Added</th>
+                        <th>Date Sold</th>
+                        <th>Product Details</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Sales</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Developer Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td>12-10-2018</td>
+                        <td><a href="sale-a-admin.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>Ksh. 260</td>
+                        <td>10</td>
+                        <td>Ksh. 2600</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Staging Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td>12-10-2018</td>
+                        <td><a href="sale-a-admin.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>Ksh. 360</td>
+                        <td>1</td>
+                        <td>Ksh. 360</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Testing Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td>12-10-2018</td>
+                        <td><a href="sale-a-admin.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>Ksh. 410</td>
+                        <td>5</td>
+                        <td>Ksh. 2050</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>Production Tools</td>
+                        <td>Dev Tools</td>
+                        <td>10-10-2018</td>
+                        <td>12-10-2018</td>
+                        <td><a href="sale-a-admin.html"><i class="fa fa-eye" style="font-size:30px;color:blue"></i></a></td>
+                        <td>Ksh. 620</td>
+                        <td>3</td>
+                        <td>Ksh. 1860</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th>Ksh. 6,870</th>
+                    </tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <th>CHECKOUT</th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </section>
+    <footer class="text-center bg-dark">
+        <p>
+            StoreManager, Copyright &copy; 2018
+        </p>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+
+</body>
+
+</html>
