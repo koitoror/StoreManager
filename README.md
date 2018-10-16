@@ -90,9 +90,14 @@ To test endpoints manually fire up postman and run the following endpoints
 --- | ---
 GET  `/api/v1/products` | Fetch all products
 GET  `/api/v1/products/<productId>` | Fetch a single product 
-POST  `/api/v1/products` | Create an product
-PUT  `/api/v1/products/<productId>` | Modify an product
-DELETE  `/api/v1/products/<productId>` | Delete an product
+POST  `/api/v1/products` | Create anproduct
+PUT  `/api/v1/products/<productId>` | Modify a product
+DELETE  `/api/v1/products/<productId>` | Delete a product
+GET  `/api/v1/sales` | Fetch all sales
+GET  `/api/v1/sales/<saleId>` | Fetch a single sale 
+POST  `/api/v1/sales` | Create a sale
+PUT  `/api/v1/sales/<saleId>` | Modify a sale
+DELETE  `/api/v1/sales/<saleId>` | Delete a sale
 
 
 # API Documentation
