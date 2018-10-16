@@ -1,0 +1,17 @@
+language: python
+python:
+  - "3.5"
+# command to install dependencies
+install:
+  - "pip install -r requirements.txt"
+  - "pip install coveralls"
+# command to run tests
+script:
+  - pytest --cov
+branches:
+  only:
+  - ft-api-endpoints-v1-161242038
+  - develop
+  - master
+after_success:
+  - coveralls
