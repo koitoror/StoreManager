@@ -9,13 +9,18 @@ install:
 
 # command to run tests
 script:
-  - "export FLASK_CONFIG='development'"
-  - "export SECRET_="some-very-long-string-of-random-characters-CHANGE-TO-YOUR-LIKING""  
   - pytest --cov
+
 branches:
   only:
   - ft-api-endpoints-v1-161242038
   - develop
   - master
+
 after_success:
   - coveralls
+
+env:
+  - FLASK_APP=run.py
+  - FLASK_CONFIG='development'
+  - SECRET_="some-very-long-string-of-random-characters-CHANGE-TO-YOUR-LIKING"
