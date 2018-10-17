@@ -1,7 +1,7 @@
 from flask_restplus import Namespace, fields, reqparse
 
 class ProductsDto(object):
-    api = Namespace("Products", description="Products related operations")
+    api = Namespace("", description="products related operations")
     products = api.model(
         "products", {
         "id": fields.Integer(),
@@ -26,7 +26,7 @@ update_product_parser.add_argument('description', type=str, help='description sh
 
 
 class SalesDto(object):
-    api = Namespace("Sales", description="Sales related operations")
+    api = Namespace("", description="Sales related operations")
     sales = api.model(
         "sales", {
         "id": fields.Integer(),
