@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.com/koitoror/StoreManager.svg?branch=ft-api-endpoints-v1-161242038)](https://travis-ci.org/koitoror/StoreManager)
-
 [![Coverage Status](https://coveralls.io/repos/github/koitoror/StoreManager/badge.svg?branch=ft-api-endpoints-v1-161242038)](https://coveralls.io/github/koitoror/StoreManager?branch=ft-api-endpoints-v1-161242038)
 
 # StoreManager
