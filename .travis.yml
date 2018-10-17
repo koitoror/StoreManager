@@ -5,6 +5,9 @@ python:
 install:
   - "pip install -r requirements.txt"
   - "pip install coveralls"
+  - "export FLASK_CONFIG="development"
+  - "export SECRET_="some-very-long-string-of-random-characters-CHANGE-TO-YOUR-LIKING""
+
 # command to run tests
 script:
   - pytest --cov
