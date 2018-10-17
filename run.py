@@ -7,7 +7,7 @@ import unittest
 from flask_script import Manager # controller class for handling commands
 
 # local imports
-from app.api.v1 import create_app
+from instance import create_app
 from app import api_v1
 
 # application development instance
