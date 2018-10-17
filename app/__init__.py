@@ -15,22 +15,25 @@ from .api.v1.views.sales_views import api as sales_ns
 #     description='StoreManager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.'
 # )
 
-api_v1 = Blueprint('api', __name__, url_prefix='/api/v1')
+# api_v1 = Blueprint('api', __name__, url_prefix=/api/v1')
 
-authorizations = {
-    'apikey' : {
-        'type' : 'apiKey',
-        'in' : 'header',
-        'name' : 'X-API-KEY'
-    }
-}
+api_v1 = Blueprint('api', __name__)
+
+
+# authorizations = {
+#     'apikey' : {
+#         'type' : 'apiKey',
+#         'in' : 'header',
+#         'name' : 'X-API-KEY'
+#     }
+# }
 
 api = Api(
     api_v1, 
     title='StoreManager API :: v1',
-    doc='/documentation',
+    doc='/api/documentation',
     version='1.0',
-    authorizations=authorizations,
+    # authorizations=authorizations,
     description='StoreManager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store. A simple StoreManager API',
 )
 
@@ -38,8 +41,8 @@ api = Api(
 # ns0 = api.namespace('products', description='PRODUCTS operations')
 # ns1 = api.namespace('sales', description='SALES operations')
 
-# api.add_namespace(products_ns path='/api/v1')
-# api.add_namespace(sales_ns path='/api/v1')
+# api.add_namespace(products_ns path=/api/v1')
+# api.add_namespace(sales_ns path=/api/v1')
 
-api.add_namespace(products_ns)
-api.add_namespace(sales_ns)
+api.add_namespace(products_ns, path='/api/v1')
+api.add_namespace(sales_ns, path='/api/v1')
