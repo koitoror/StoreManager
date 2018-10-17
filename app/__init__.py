@@ -38,8 +38,8 @@ api = Api(
 # ns0 = api.namespace('products', description='PRODUCTS operations')
 # ns1 = api.namespace('sales', description='SALES operations')
 
+# api.add_namespace(products_ns path='/api/v1')
+# api.add_namespace(sales_ns path='/api/v1')
+
 api.add_namespace(products_ns)
 api.add_namespace(sales_ns)
-
-# api.add_namespace(products_ns)
-# api.add_namespace(sales_ns)
