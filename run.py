@@ -11,8 +11,8 @@ from instance import create_app
 from app import api_v1
 
 # application development instance
-# app = create_app(config_name=os.getenv("FLASK_CONFIG"))
-app = create_app(config_name="development")
+app = create_app(config_name=os.getenv("FLASK_CONFIG"))
+# app = create_app(config_name='development')
 
 
 # registering the blueprint
