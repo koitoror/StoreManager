@@ -1,1 +1,1 @@
-﻿worker:gunicorn python run.py run
+﻿web:gunicorn python run.py run
