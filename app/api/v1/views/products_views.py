@@ -40,7 +40,7 @@ class ProductList(Resource):
     @api.expect(post_products)
     @api.doc('creates an product', security='apikey')
     @api.response(201, "Created")
-    @token_required
+    
     def post(self):
         """Creates a new Product."""
         args = product_parser.parse_args()
@@ -49,7 +49,7 @@ class ProductList(Resource):
     @api.doc("list_products", security='apikey')
     @api.response(404, "Products Not Found")
     @api.marshal_list_with(products, envelope="products")
-    @token_required
+    
     def get(self):
         """List all Products"""
         return product.get_all()
@@ -62,7 +62,7 @@ class Product(Resource):
 
     @api.marshal_with(products)
     @api.doc('get one product', security='apikey')
-    @token_required
+    
     def get(self, productId):
         """Displays a single Product."""
         return product.get_one(productId)
@@ -70,7 +70,7 @@ class Product(Resource):
     @api.marshal_with(products)
     @api.doc('updates an product', security='apikey')
     @api.expect(post_products)
-    @token_required
+    
     def put(self, productId):
         """Updates a single Product."""
         args = update_product_parser.parse_args()
@@ -79,7 +79,7 @@ class Product(Resource):
     @api.marshal_with(products)
     @api.doc('deletes an product', security='apikey')
     @api.response(204, 'Product Deleted')
-    @token_required
+    
     def delete(self, productId):
         """Deletes a single Product."""
         product.delete_product(productId)

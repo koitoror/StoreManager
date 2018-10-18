@@ -48,7 +48,7 @@ class SaleList(Resource):
     @api.doc("list_sales", security='apikey')
     @api.response(404, "Sales Not Found")
     @api.marshal_list_with(sales, envelope="sales")
-    @token_required
+
     def get(self):
         """List all Sales"""
         return sale.get_all()
