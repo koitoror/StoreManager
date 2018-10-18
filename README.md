@@ -103,5 +103,10 @@ DELETE  `/api/v1/sales/<saleId>` | Delete a sale
 # API Documentation
 Once app server is running you can view API documentation from
 ```
-http://127.0.0.1:5000/api/documentation
+http://127.0.0.1:5000/
+```
+
+Heroku Link to app server is running where you can view API documentation from
+```
+https://store-manager-ke.herokuapp.com/
 ```
