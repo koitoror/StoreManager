@@ -8,26 +8,26 @@ class TestProduct(BaseTestCase):
     """Test Products Endpoints."""
 
     def create(self):
-        """Create product with required fields (title, description)."""
+        """Create product with required fields (name, price, quantity)."""
         return self.client.post(
             '/api/v1/products',
             data=json.dumps(self.data),
             content_type='application/json'
         )
 
-    def create_no_title(self):
-        """Create product with no title."""
+    def create_no_name(self):
+        """Create product with no name."""
         return self.client.post(
             '/api/v1/products',
-            data=json.dumps(self.no_title),
+            data=json.dumps(self.no_name),
             content_type='application/json'
         )
 
-    def create_no_description(self):
-        """Create product with no description."""
+    def create_no_price(self):
+        """Create product with no price."""
         return self.client.post(
             '/api/v1/products',
-            data=json.dumps(self.no_description),
+            data=json.dumps(self.no_price),
             content_type='application/json'
         )
 
@@ -98,30 +98,30 @@ class TestProduct(BaseTestCase):
             self.assertEqual(res.status_code, 201)
             result = self.client.put(
                 '/api/v1/products/{}'.format(res.get_json()['id']),
-                data=json.dumps({"name":"soccer", "description":"france are the 2018 world champions"}),
+                data=json.dumps({"name":"soccer-balls", "price":1000, "quantity":20}),
                 content_type='application/json'
             )
             self.assertEqual(result.status_code, 200)
-            self.assertIn(b"soccer",result.data )
+            self.assertIn(b"soccer-balls",result.data )
 
     def test_add_product_without_name(self):
         """Test add product without name."""
         with self.client:
-            res = self.create_no_title()
+            res = self.create_no_name()
             self.assertEqual(res.status_code, 400)
             name = res.get_json()['errors']['name']
             message = res.get_json()['message']
             self.assertIn("name should be a string Missing required parameter", name)
             self.assertIn("Input payload validation failed", message)
 
-    def test_add_product_without_description(self):
-        """Test add product without description."""
+    def test_add_product_without_price(self):
+        """Test add product without price."""
         with self.client:
-            res = self.create_no_description()
+            res = self.create_no_price()
             self.assertEqual(res.status_code, 400)
-            description = res.get_json()['errors']['description']
+            price = res.get_json()['errors']['price']
             message = res.get_json()['message']
-            self.assertIn("description should be a string Missing required parameter", description)
+            self.assertIn("price should be a integer Missing required parameter", price)
             self.assertIn("Input payload validation failed", message)
 
     def test_add_no_json_data(self):
