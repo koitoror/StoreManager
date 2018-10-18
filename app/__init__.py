@@ -31,7 +31,7 @@ authorizations = {
 api = Api(
     api_v1, 
     title='StoreManager API :: v1',
-    doc='/api/documentation',
+    doc='/',
     version='1.0',
     authorizations=authorizations,
     description='StoreManager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store. A simple StoreManager API',
