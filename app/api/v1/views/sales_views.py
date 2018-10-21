@@ -6,6 +6,7 @@ from functools import wraps
 # local imports
 from ..models.sales import Sale as SaleClass
 from ..utils.dto import SalesDto, sale_parser, update_sale_parser
+from ..utils.decorators import token_required
 
 api = SalesDto.api
 sales = SalesDto.sales
@@ -13,25 +14,6 @@ post_sales = SalesDto.post_sales
 
 sale = SaleClass()
 
-def token_required(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-
-        token = None
-
-        if 'x-access-token' in request.headers:
-            token = request.headers['x-access-token']
-
-        if not token:
-            return {'message' : 'Token is missing.'}, 401
-
-        if token != 'mytoken':
-            return {'message' : 'Your token is wrong, wrong, wrong!!!'}, 401
-
-        print('TOKEN: {}'.format(token))
-        return f(*args, **kwargs)
-
-    return decorated
 
 @api.route("/sales")
 class SaleList(Resource):
@@ -48,7 +30,7 @@ class SaleList(Resource):
     @api.doc("list_sales", security='apikey')
     @api.response(404, "Sales Not Found")
     @api.marshal_list_with(sales, envelope="sales")
-
+    @token_required
     def get(self):
         """List all Sales"""
         return sale.get_all()

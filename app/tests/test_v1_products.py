@@ -3,7 +3,6 @@ import json
 from app.tests.base import BaseTestCase
 
 
-
 class TestProduct(BaseTestCase):
     """Test Products Endpoints."""
 
@@ -44,6 +43,11 @@ class TestProduct(BaseTestCase):
         """
         with self.client:
             res = self.create()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            headers=headers
+            )
             self.assertEqual(res.status_code, 201)
             self.assertIn(b"test1",res.data)
 
@@ -53,6 +57,11 @@ class TestProduct(BaseTestCase):
         """
         with self.client:
             res = self.create()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            headers=headers
+            )
             self.assertEqual(res.status_code, 201)
             res = self.client.get(
                 '/api/v1/products',
@@ -67,6 +76,11 @@ class TestProduct(BaseTestCase):
         """
         with self.client:
             res = self.create()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            headers=headers
+            )
             self.assertEqual(res.status_code, 201)
             result = self.client.get(
                 '/api/v1/products/{}'.format(res.get_json()['id'])
@@ -79,6 +93,14 @@ class TestProduct(BaseTestCase):
         """
         with self.client:
             res = self.create()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            '/api/v1/products/',
+            data=json.dumps(self.data),
+            content_type='application/json',
+            headers=headers
+            )
             self.assertEqual(res.status_code, 201)
             result = self.client.delete(
                 '/api/v1/products/{}'.format(res.get_json()['id'])
@@ -95,6 +117,11 @@ class TestProduct(BaseTestCase):
         """
         with self.client:
             res = self.create()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            headers=headers
+            )
             self.assertEqual(res.status_code, 201)
             result = self.client.put(
                 '/api/v1/products/{}'.format(res.get_json()['id']),
@@ -108,6 +135,11 @@ class TestProduct(BaseTestCase):
         """Test add product without name."""
         with self.client:
             res = self.create_no_name()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            headers=headers
+            )
             self.assertEqual(res.status_code, 400)
             name = res.get_json()['errors']['name']
             message = res.get_json()['message']
@@ -118,6 +150,11 @@ class TestProduct(BaseTestCase):
         """Test add product without price."""
         with self.client:
             res = self.create_no_price()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            headers=headers
+            )
             self.assertEqual(res.status_code, 400)
             price = res.get_json()['errors']['price']
             message = res.get_json()['message']
@@ -128,6 +165,11 @@ class TestProduct(BaseTestCase):
         "Test cannot add no json data"
         with self.client:
             res = self.create_no_json_data()
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            headers=headers
+            )
             self.assertTrue(res.status_code, 400)
             message = res.get_json()['message']
             self.assertIn('Input payload validation failed', message)

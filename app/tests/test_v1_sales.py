@@ -54,9 +54,13 @@ class TestSale(BaseTestCase):
         with self.client:
             res = self.create()
             self.assertEqual(res.status_code, 201)
-            res = self.client.get(
-                '/api/v1/sales',
-                content_type='application/json'
+            access_token = 'mytoken'
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            return self.client.post(
+            '/api/v1/sales',
+            data=json.dumps(self.data),
+            content_type='application/json',
+            headers=headers
             )
             self.assertEqual(res.status_code, 200)
             self.assertIn(b"test",res.data )
