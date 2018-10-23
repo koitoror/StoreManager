@@ -53,9 +53,9 @@ class TestSale(BaseTestCase):
         """
         with self.client:
             res = self.create()
-            self.assertEqual(res.status_code, 201)
             access_token = 'mytoken'
-            headers = {'Authorizations': 'Bearer {}'.format(access_token)}       
+            headers = {'Authorizations': 'Bearer {}'.format(access_token)} 
+            self.assertEqual(res.status_code, 201)        
             return self.client.post(
             '/api/v1/sales',
             data=json.dumps(self.data),

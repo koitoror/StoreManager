@@ -9,14 +9,17 @@ class ProductsDto(object):
         "modified_date": fields.String(),
         "name":fields.String(required=True, description="The product name"),
         "price":fields.Integer(required=True, description="The product price"),
-        "quantity":fields.Integer(required=True, description="The product quantity")
+        "quantity":fields.Integer(required=True, description="The product quantity"),
+        "min_quantity":fields.Integer(required=True, description="The product minimum quantity"),
+        "category":fields.String(required=True, description="The product category")
 
-        }
-    )
+    })
     post_products = api.model("post_products",{
         "name": fields.String("products name"),
         "price": fields.Integer("products price"),
-        "quantity": fields.Integer("products quantity")
+        "quantity": fields.Integer("products quantity"),
+        "min_quantity": fields.Integer("products min_quantity"),
+        "category": fields.String("products category")
 
     })
 
@@ -24,12 +27,15 @@ product_parser = reqparse.RequestParser()
 product_parser.add_argument('name', required=True, type=str, help='name should be a string')
 product_parser.add_argument('price', required=True, type=int, help='price should be a integer')
 product_parser.add_argument('quantity', required=True, type=int, help='quantity should be a integer')
+product_parser.add_argument('min_quantity', required=True, type=int, help='min_quantity should be a integer')
+product_parser.add_argument('category', required=False, type=str, help='category should be a string')
 
 update_product_parser = reqparse.RequestParser()
 
 update_product_parser.add_argument('name', type=str, help='name should be a string')
 update_product_parser.add_argument('price', type=int, help='price should be a integer')
 update_product_parser.add_argument('quantity', type=int, help='quantity should be a integer')
+update_product_parser.add_argument('category', type=str, help='category should be a string')
 
 
 class SalesDto(object):

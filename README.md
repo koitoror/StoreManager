@@ -101,12 +101,18 @@ DELETE  `/api/v1/sales/<saleId>` | Delete a sale
 
 
 # API Documentation
-Once app server is running you can view API documentation from
+Once app server is running you can view offline the API documentation locally from
 ```
 http://127.0.0.1:5000/
 ```
 
-Heroku Link to app server is running where you can view API documentation from
+Once app server is running you can view online the [API documentation here]
 ```
-https://store-manager-ke.herokuapp.com/
+(https://store-manager-ke.herokuapp.com/)
+```
+
+# API Authorization
+token to access the priviledged endpoints is hardcorded as:
+```
+mytoken
 ```

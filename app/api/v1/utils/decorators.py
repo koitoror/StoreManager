@@ -1,5 +1,8 @@
 from functools import wraps
 
+from flask import request
+
+
 def token_required(f):
     """Ensures user is logged in before action
     """
