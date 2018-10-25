@@ -1,18 +1,8 @@
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-[![Build Status](https://travis-ci.com/koitoror/StoreManager.svg?branch=ft-api-endpoints-v1-161242038)](https://travis-ci.org/koitoror/StoreManager)
-[![Coverage Status](https://coveralls.io/repos/github/koitoror/StoreManager/badge.svg?branch=ft-api-endpoints-v1-161242038)](https://coveralls.io/github/koitoror/StoreManager?branch=ft-api-endpoints-v1-161242038)
+[![Build Status](https://travis-ci.com/koitoror/StoreManager.svg?branch=ft-api-endpoints-v2-161242038)](https://travis-ci.org/koitoror/StoreManager)
+[![Coverage Status](https://coveralls.io/repos/github/koitoror/StoreManager/badge.svg?branch=ft-api-endpoints-v2-161242038)](https://coveralls.io/github/koitoror/StoreManager?branch=ft-api-endpoints-v2-161242038)
 
 # StoreManager
 Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
-
-### Features
-
-1. Admin can add a product.
-2. Admin/store attendant can get all products.
-3. Admin/store attendant can get a specific product.
-4. Store attendant can add a sale order.
-5. Admin can get all sale order records.
-6. Admin can add an attendant and assign admin privileges.
 
 ## Requirements
 Have the following set up on your local environment before getting started
@@ -70,10 +60,32 @@ pip3 install -r requirements.txt
 
 Set environment variables for 
 
->`FLASK_CONFIG`
 > `SECRET_KEY` is your secret key
+
 > `FLASK_CONFIG` is the enviroment you are running on. Should be either `Production`, `Development` or `Testing`. NOTE: its case sensitive
 
+> `ROLE` is the postgresql user
+
+> `PASSWORD` is the postgresql password for the user created
+
+> `PORT` the default port for postgresql service which 5432
+
+> `HOST` which is localhost
+
+> `DATABASE` the name of the app database
+
+
+## API Usage
+
+To get the app running...
+
+```bash
+$ psql -c 'create database <database-name>;' -U postgres
+```
+
+```bash
+$ psql -c "create user <your-user-name> with password <your-password> createdb;" -U postgres
+```
 
 ## API Usage
 
@@ -91,43 +103,54 @@ You can also use Postman or any other agent to test the endpoints
 To run your tests use
 
 ```bash
-$ python run.py test
+$ python run.py test or 
+$ pytest --cov
 ```
 
 To test endpoints manually fire up postman and run the following endpoints
 
-### Products Endpoints
+
+### Auth Endpoints
 **EndPoint** | **Functionality**
 --- | ---
-GET  `/api/v1/products` | Fetch all products
-GET  `/api/v1/products/<productId>` | Fetch a single product 
-POST  `/api/v1/products` | Create anproduct
-PUT  `/api/v1/products/<productId>` | Modify a product
-DELETE  `/api/v1/products/<productId>` | Delete a product
+POST  `/api/v2/auth/signup` | Register a user
+POST  `/api/v2/auth/login` | Logs in a user
+
+
+###  Endpoints
+**EndPoint** | **Functionality**
+--- | ---
+GET  `/api/v2/products` | Fetch all products
+GET  `/api/v2/products/<productId>` | Fetch a single product 
+POST  `/api/v2/products` | Create a product
+PUT  `/api/v2/products/<productId>` | Modify a product
+DELETE  `/api/v2/products/<productId>` | Delete a product
+
 
 ### Sales Endpoints
 **EndPoint** | **Functionality**
 --- | ---
-GET  `/api/v1/sales` | Fetch all sales
-GET  `/api/v1/sales/<saleId>` | Fetch a single sale 
-POST  `/api/v1/sales` | Create a sale
-PUT  `/api/v1/sales/<saleId>` | Modify a sale
-DELETE  `/api/v1/sales/<saleId>` | Delete a sale
+GET  `/api/v2/sales` | Fetch all sales
+GET  `/api/v2/sales/<saleId>` | Fetch a single sale 
+POST  `/api/v2/sales` | Create a sale
+PUT  `/api/v2/sales/<saleId>` | Modify a sale
+DELETE  `/api/v2/sales/<saleId>` | Delete a sale
+
 
 
 # API Documentation
-Once app server is running you can view offline the API documentation locally from
+Once app server is running you can view API documentation locally from
 ```
 http://127.0.0.1:5000/
 ```
 
-Once app server is running you can view online the [API documentation here]
-```
-(https://store-manager-ke.herokuapp.com/)
-```
+Once app server is running you can view * VERSION 1 * on HEROKU the [API documentation here](https://store-manager-ke.herokuapp.com)
 
-# API Authorization
-token to access the priviledged endpoints is hardcorded as:
-```
-mytoken
-```
+
+Once app server is running you can view * VERSION 2 * on HEROKU the [API documentation here](https://store-manager-ke-v2.herokuapp.com/)
+
+
+
+
+
+
