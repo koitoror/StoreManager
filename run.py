@@ -3,16 +3,18 @@
 import os
 import unittest
 
+
 # third-party imports
 from flask_script import Manager # controller class for handling commands
 
 # local imports
 from instance import create_app
-from app import api_v1
+from app.api.v1 import api_v1
+
+
 
 # application development instance
 app = create_app(config_name=os.getenv("FLASK_CONFIG"))
-# app = create_app(config_name="development")
 
 
 # registering the blueprint
