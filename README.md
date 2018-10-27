@@ -1,3 +1,4 @@
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![Build Status](https://travis-ci.com/koitoror/StoreManager.svg?branch=develop)](https://travis-ci.com/koitoror/StoreManager)
 [![Coverage Status](https://coveralls.io/repos/github/koitoror/StoreManager/badge.svg?branch=develop)](https://coveralls.io/github/koitoror/StoreManager?branch=develop)
 
