@@ -148,9 +148,3 @@ Once app server is running you can view * VERSION 1 * on HEROKU the [API documen
 
 
 Once app server is running you can view * VERSION 2 * on HEROKU the [API documentation here](https://store-manager-ke-v2.herokuapp.com/)
-
-
-
-
-
-
