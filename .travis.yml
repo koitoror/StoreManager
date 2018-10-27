@@ -5,7 +5,12 @@ python:
 install:
   - "pip install -r requirements.txt"
   - "pip install coveralls"
- 
+
+before_script:
+  - psql -c 'create database store_manager;' -U postgres
+  - psql -c "create user kamar with password 'pass@word1' createdb;" -U postgres
+  - python app/database.py
+
 
 # command to run tests
 script:
@@ -14,11 +19,16 @@ script:
 branches:
   only:
   - ft-api-endpoints-v1-161242038
+  - ch-tests-set-up-161443803
+  - ft-writing-tests-setting-up-161443803
   - develop
   - master
+  - challenge3
 
 after_success:
   - coveralls
 
 env:
-  - FLASK_CONFIG='development'
+  global:
+    - FLASK_CONFIG='development'
+    - SECRET_KEY = "some-very-long-string-of-random-characters-CHANGE-TO-YOUR-LIKING"
