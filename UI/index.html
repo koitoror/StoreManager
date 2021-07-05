@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/signup.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/login.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/login.1.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/style.css" />
+
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="#default" class="logo">StoreManager</a>
+        <div class="header-right">
+
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Admin Login</button>
+            <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Attendant Login</button>
+
+        </div>
+    </div>
+
+    <div>
+
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
+
+        <h1>Hey i'am StoreManager®.</h1>
+        <p>every store manager's favorite web app</p>
+
+
+    </div>
+
+    <section>
+        <div id="id01" class="modal" style="display: none;">
+
+            <form class="modal-content animate" action="admin.html">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+                    <img src="static/images/img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required="">
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required="">
+
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+        
+        <div id="id03" class="modal" style="display: none;">
+
+            <form class="modal-content animate" action="attendant.html">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
+                    <img src="static/images/img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required="">
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required="">
+
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center bg-dark">
+        <p>
+            StoreManager, Copyright &copy; 2018
+        </p>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+
+</body>
+
+</html>
